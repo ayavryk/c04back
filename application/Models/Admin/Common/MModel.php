@@ -4,13 +4,13 @@ use CodeIgniter\Model;
 
 // Конструктор моделей админки. Обработка запросов и
 
-class MModel extends Model
+class MModel extends MMlib
 {
     protected $table = '';
     protected $meta = array();
     protected $perPage = 25;
     protected $GET = array();
-    protected $POST = array();
+    public $POST = array();
 
     function __construct() {
         parent::__construct();
@@ -18,37 +18,12 @@ class MModel extends Model
         $this->buildBdData();  
         $this->clearGetName();
         $this->getParapms();   
-        $this->getPost();           
-
+        $this->POST = $this->getPost();           
     }
 
 /*****************************************************************************************************
-*          Общие методы для  всех моделей 
+*          Общие методы для универсальных моделей 
 *****************************************************************************************************/
-
-    // преобразование выхода SQL в массив
-    public function sql($query) {
-        $res = $this->db->query($query);
-
-        if (!$res) {
-            echo "bad sql query: ".$query;
-            die();
-        }
-
-        $query = substr(trim(strtoupper($query)),0,8);
-        $rd = array('SELECT','SHOW');
-
-        foreach ($rd as $key=>$value) {
-            if (strpos($query,$value) === 0) {
-                return $res->getResultArray();  
-            }
-        }           
-    }
-
-
-	public function lastId($table)	{
-           return $this->sql("SELECT LAST_INSERT_ID() AS N FROM $table")[0]['N'];
-	}
 	
     // составление списка всех таблиц с полями и отношениями
     public  function buildBdData() {
@@ -82,10 +57,6 @@ class MModel extends Model
                 array('link'=>$key,'table'=> $rel[1]);
             }                         
         }
-    }
-
-    public function clearName($value) {
-        return preg_replace('/[^a-zA-Z0-9\-\_\:\,]/', '',$value); 
     }
 
  	// вытаскиваем из параметров таблицу
@@ -177,22 +148,6 @@ class MModel extends Model
         } 
 
         return $res;
-    }
-
-    public function jsonString2Array($json) {
-        $res = array();
-        $json = json_decode($json,true);
-			foreach ($json as $item=>$value) {
-			$res[$item] = $value;
-		}
-        return $res; 
-    }
-
-    public function getPost(){
-        if (!(isset($_POST) && isset($_POST['json']))) {
-            return;
-        } 
-        $this->POST = $this->jsonString2Array($_POST['json']);
     }
 
 }

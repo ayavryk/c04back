@@ -15,8 +15,6 @@ class MMsave extends MModel
         $this->table = $this->clearName($this->GET['method']);
     }
 
-
-
     public function default_default()
     {   
         $this->mainSave();
@@ -48,6 +46,7 @@ class MMsave extends MModel
 	    $this->id = $this->lastId($this->table);
         }   else {
             $this->sql("UPDATE $set WHERE id=".$this->id);
+            //echo "UPDATE $set WHERE id=".$this->id;
         }
     }
                

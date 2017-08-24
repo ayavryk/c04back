@@ -10,7 +10,12 @@ class Main extends Controller
 
 	public function index()
 	{
-
+/*
+		session_start();
+		if (!isset($_SESSION['logged'])) {
+			$this->out(array('error'=>'auth'));
+		}
+*/
 		//var_dump($_POST);
         	//var_dump($_GET);
 		//phpinfo();
@@ -24,11 +29,8 @@ class Main extends Controller
 
 		$model = new $modelName();
 		$result = $model->get();
-		$this->out($result);	
-
-					
+		$this->out($result);						
 	}
-
 
 	// dsdjl json
 	public function out($result)
@@ -40,4 +42,5 @@ class Main extends Controller
 		echo json_encode($result,  JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);	
 		die;
 	}
+
 }
