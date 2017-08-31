@@ -8,7 +8,7 @@ use CodeIgniter\Model;
 
 //ff.dev/admin/edit?method=text&id=18
 
-class MMedit extends MModel
+class MMedit extends MMcommon
 {
     public $GET = array();
     public $ID = 0;

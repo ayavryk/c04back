@@ -1,0 +1,56 @@
+{
+
+    "group": [
+        {
+            "name":"Удалить", 
+            "code":"delete",
+            "confirm": "Вы уверены, что хотите удалить выделенные позиции? Подтвердите удаление"
+        },
+        {
+            "name":"Опубликовать", 
+            "code":"set",
+            "field":"public",
+            "value":1      
+        },
+        {
+            "name":"Снять с публикации", 
+            "code":"set",
+            "field":"public",
+            "value":0      
+        }         
+    ],
+    
+    "config": [
+        {
+            "field":"id",
+            "elink":"http://yandex.ru/?{id}",
+            "header":"ID",
+            "title":"Посмотреть на сайте"            
+        },
+        {
+            "field":"name",
+            "header":"Название",
+            "link":"/edit/author/{id}",
+            "title":"Редактировать"
+        },
+        {
+            "field":"created",
+            "header":"Создан"
+        }, 
+        {
+            "type":"icon",
+            "title":"Удалить",
+            "command":"delete",
+            "confirm": "Вы уверены, что хотите удалить текущую позицию? Подтвердите удаление",
+            "icons": ["fa-trash-o"]
+        },
+        {
+            "field":"public",
+            "type":"icon",
+            "title":"Опубликовать/снять",
+            "command":"invert",
+            "commandUrl":"/admin/command",
+            "icons": ["fa-eye","fa-eye-slash"]
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+	"config": [
+		{
+			"field": "id",
+			"header": "ID",
+			"width": "3em"
+		},
+		{
+			"field": "about",
+			"header": "Содержание",
+			"link": "/edit/service_texts/{id}"
+		},
+		{
+			"field": "alias",
+			"header": "alias",
+			"width": "8em"
+		},
+		{
+			"field": "created",
+			"header": "created",
+			"width": "4.5em"
+		},
+		{
+			"field": "edited",
+			"header": "edited",
+			"width": "4.5em"
+		},
+ 		{
+            "type":"icon",
+            "title":"Удалить",
+            "command":"delete",
+            "confirm": "Вы уверены, что хотите удалить текущую позицию? Подтвердите удаление",
+            "icons": ["fa-trash-o"]
+        },
+        {
+            "field":"public",
+            "type":"icon",
+            "title":"Опубликовать/снять",
+            "command":"invert",
+            "commandUrl":"/admin/command",
+            "icons": ["fa-eye","fa-eye-slash"]
+        }
+	]
+}

@@ -11,7 +11,7 @@
 
 		<div class="wrap">
  <form method="post" action="/auth/login">
-    L:<input type="text" name="l" value="ayavryk@gmail.com"><br>
+    L:<input type="text" name="l" value="test"><br>
     P:<input type="text" name="p" value=""><br>
     <input type="submit"/>
  </form>

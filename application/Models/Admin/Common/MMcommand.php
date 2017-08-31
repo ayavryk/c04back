@@ -6,7 +6,7 @@ use CodeIgniter\Model;
     дефолтные методы для получения перечня записей в таблицах
 ************************************************************************/
 
-class MMCommand extends MModel
+class MMCommand extends MMcommon
 {
     public $data = array();
     public $ids = array();

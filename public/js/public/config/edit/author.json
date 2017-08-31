@@ -1,0 +1,31 @@
+{    
+   "config":[  
+      [  
+         {  
+            "type":"input",
+            "field":"name",
+            "placeholder":"ФИО",
+            "label":"ФИО"
+         },{  
+            "flex":1,
+            "type":"input",
+            "field":"fname",
+            "placeholder":"Полное имя",
+            "label":"Полное имя"
+         },{  
+            "type":"check",
+            "field":"public",
+            "label":"Опубликовано"
+         }
+      ],       
+      [  
+         {  
+            "flex":1,
+            "type":"rich",
+            "field":"text",
+            "placeholder":"Информация об авторе",
+            "label":"Информация об авторе"
+         }
+      ]   
+   ]
+}

@@ -17,7 +17,7 @@ class Auth extends Controller
 			return view('auth/authorized');
 		}	else {
 			return view('auth/login');
-		} 
+		}
 	}
 
 	public function login()
@@ -29,12 +29,12 @@ class Auth extends Controller
 		} 
 		$L = $this->model->clearName($_POST['l']);
 		$P = $this->model->clearName(md5($_POST['p']));
-		$query = "SELECT username,regmail FROM users WHERE regmail='$L'";
+		$query = "SELECT id,username,regmail FROM users WHERE regmail='$L'";
 	    $res = $this->model->sql($query);
 	    if (count($res)) {			
 			session_start();
 			$_SESSION['logged'] = true;
-			$_SESSION['user']=  $res[0]['username']; 
+			$_SESSION['user'] =  $res[0]['username']; 
 			$url = '/auth';
 			if (isset($_SESSION['return'])) {
 				$url = $_SESSION['return'];

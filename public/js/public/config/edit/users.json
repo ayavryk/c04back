@@ -1,0 +1,31 @@
+{
+	"config": [
+		[
+			{
+				"field": "username",
+				"type": "input",
+				"placeholder": "username",
+				"label": "username",
+				"flex": 1
+			}
+		],
+		[
+			{
+				"field": "regmail",
+				"type": "input",
+				"placeholder": "regmail",
+				"label": "regmail",
+				"flex": 1
+			}
+		],
+		[
+			{
+				"field": "password",
+				"type": "input",
+				"placeholder": "password",
+				"label": "password",
+				"flex": 1
+			}
+		]
+	]
+}

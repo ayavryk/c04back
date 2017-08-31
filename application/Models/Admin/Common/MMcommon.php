@@ -1,10 +1,12 @@
 <?php namespace App\Models\Admin\Common;
+use App\Models\Admin as Root;
 
 use CodeIgniter\Model;
 
-// Конструктор моделей админки. Обработка запросов и
+// Конструктор моделей универсальной части админок.
+// Сюда входят все операции (выводы списка, форм, манипуляции списками и формами)
 
-class MModel extends MMlib
+class MMcommon extends Root\MAdminBase
 {
     protected $table = '';
     protected $meta = array();
@@ -14,7 +16,6 @@ class MModel extends MMlib
 
     function __construct() {
         parent::__construct();
-        $this->db = \Config\Database::connect();
         $this->buildBdData();  
         $this->clearGetName();
         $this->getParapms();   

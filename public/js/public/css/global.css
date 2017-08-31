@@ -1,0 +1,35 @@
+html,  body {
+   margin:0;
+   padding:0;
+   font-family: Arial, Helvetica, sans-serif;
+   height:100%;
+}
+#app {height:100%}
+.editWrapper {
+    max-width:1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+    min-width:600px;
+}
+
+.hidden {
+    display:none !important;
+} 
+
+.fa {
+    color:#555;
+    text-shadow: 1px 1px 3px #fff;
+
+} 
+
+#root {
+    height:100%;
+}
+
+.active { background:#00B5AD; }
+.secondary { background: rgb(66, 184, 221); } 
+.primary { background: rgb(66, 184, 221); }
+.warning { background: rgb(223, 117, 20); } 
+.error { background: rgb(202, 60, 60); } 
+.success { background: rgb(28, 184, 65); }

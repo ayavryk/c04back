@@ -1,0 +1,55 @@
+{  
+   "config":[  
+      [  
+         {  
+            "flex":1,
+            "type":"text",
+            "field":"text",
+            "placeholder":"Текст цитаты без тегов",
+            "label":"Teкст без тегов"
+         }
+      ],
+      [  
+         {  
+            "flex":1,
+            "field":"source",
+            "placeholder":"Источник",
+            "label":"Источник"
+         }
+      ],
+      [  
+         {  
+            "type":"mult",
+            "field":"text_author_rel",
+            "config":[  
+               {  
+                  "type":"autocomplete",
+                  "field":"name",
+                  "placeholder":"Автор",
+                  "title":"Автор",
+                  "src":"{server}?method=author&controller=suggest&query=",
+                  "width":"10em"
+               }
+            ],
+            "label":"Авторы"
+         }
+      ],
+      [  
+         {  
+            "type":"mult",
+            "field":"text_tags_rel",
+            "config":[  
+               {  
+                  "type":"autocomplete",
+                  "field":"name",
+                  "placeholder":"Тэг",
+                  "title":"Тэг",
+                  "src":"{server}?method=tags&controller=suggest&query=",
+                  "width":"10em"
+               }
+            ],
+            "label":"Теги"
+         }
+      ]   
+   ]
+}

@@ -6,7 +6,7 @@ use CodeIgniter\Model;
     дефолтные методы для получения перечня записей в таблицах
 ************************************************************************/
 
-class MMtable extends MModel
+class MMtable extends MMcommon
 {
     public  $GET = array();
 

@@ -2,7 +2,7 @@
 
 use CodeIgniter\Model;
 
-class MMsuggest extends MModel
+class MMsuggest extends MMcommon
 {
 
     // admin/suggest?method=author&query=',

@@ -1,13 +1,10 @@
-<?php namespace App\Models\Admin\Common;
+<?php namespace App\Models\Admin;
 
 use CodeIgniter\Model;
-
-// Конструктор моделей админки. Обработка запросов и
-
-class MMlib extends Model
+class MAdminBase extends Model
 {
-
-    function __construct() {
+    public $db;  
+        function __construct() {
         parent::__construct();
         $this->db = \Config\Database::connect();               
     }

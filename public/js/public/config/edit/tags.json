@@ -1,0 +1,36 @@
+{
+	"config": [
+		[
+			{
+				"field": "name",
+				"type": "input",
+				"placeholder": "name",
+				"label": "name",
+				"flex": "1"
+			},
+			{
+				"field": "public",
+				"type": "check",
+				"label": "public"
+			}
+		],
+		[
+			{
+				"field": "text",
+				"type": "text",
+				"placeholder": "text",
+				"label": "text",
+				"flex":1
+			}
+		],
+		[
+			{
+				"field": "description",
+				"type": "text",
+				"placeholder": "description",
+				"label": "description",
+				"flex":1
+			}
+		]
+	]
+}

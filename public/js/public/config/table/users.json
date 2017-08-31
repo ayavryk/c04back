@@ -1,0 +1,43 @@
+{
+	"config": [
+		{
+			"field": "id",
+			"header": "id",
+			"width": "3em",
+			"link": "/field/{id}"
+		},
+		{
+			"field": "fio",
+			"header": "fio",
+			"width": "6em",
+            "link":"/edit/users/{id}"
+		},
+		{
+			"field": "regmail",
+			"header": "regmail",
+            "link":"/edit/users/{id}"
+		},
+		{
+			"field": "edited",
+			"header": "edited"
+		},
+		{
+			"field": "created",
+			"header": "created"
+		},
+        {
+            "type":"icon",
+            "title":"Удалить",
+            "command":"delete",
+            "confirm": "Вы уверены, что хотите удалить текущую позицию? Подтвердите удаление",
+            "icons": ["fa-trash-o"]
+        },
+ 		{
+            "type":"icon",
+            "title":"Удалить",
+            "command":"delete",
+            "confirm": "Вы уверены, что хотите удалить текущую позицию? Подтвердите удаление",
+            "icons": ["fa-trash-o"]
+        }	
+	]
+}

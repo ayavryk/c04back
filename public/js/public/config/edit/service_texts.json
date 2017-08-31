@@ -1,0 +1,55 @@
+{
+	"config": [
+		[
+			{
+				"field": "about",
+				"type": "input",
+				"label": "Пояснение",
+				"placeholder": "Пояснение для вывода в заголовок таблицы редактирования",
+				"flex": 1
+			},{
+				"field": "alias",
+				"type": "input",
+				"placeholder": "Alias",
+				"label": "Alias"
+			}, {
+				"field": "public",
+				"type": "check",
+				"placeholder": "public",
+				"label": "public"
+			}
+		],
+		[{
+				"field": "title",
+				"type": "input",
+				"placeholder": "Title (если нужно)",
+				"label": "Title (если нужно)",
+				"flex": 1
+			},
+			{
+				"field": "name",
+				"type": "input",
+				"placeholder": "Заголовок страницы (если нужно)",
+				"label": "Заголовок страницы (если нужно)",
+				"flex": 1
+			}
+		],
+		[
+			{
+				"field": "description",
+				"type": "input",
+				"placeholder": "Description (если нужно)",
+				"label": "Description (если нужно)",
+				"flex": 1
+			}
+		],
+		[
+			{
+				"field": "text",
+				"type": "rich",
+				"label": "Текст ",
+				"flex": 1
+			}
+		]
+	]
+}

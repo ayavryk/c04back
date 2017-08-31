@@ -46,7 +46,8 @@ AddDefaultCharset utf-8
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^(.*)$ index.php/$1 [L]
-
+	RewriteCond $1 !^(index\.php|images|robots\.txt|tmp|.html|2328dfd6b3ce6563007cdcc4b1d5ec69.txt)
+	RewriteCond %{REQUEST_URI} !\.(css|js|jpg|gif)$
 	# Ensure Authorization header is passed along
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -69,6 +70,7 @@ AddDefaultCharset utf-8
 		<IfModule mod_headers.c>
 			SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
 			RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+    		Header set Access-Control-Allow-Origin "*"
 		</IfModule>
 	</IfModule>
 

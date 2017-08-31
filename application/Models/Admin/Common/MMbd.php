@@ -6,7 +6,7 @@ use CodeIgniter\Model;
     дефолтные методы для получения перечня записей в таблицах
 ************************************************************************/
 
-class MMbd extends MModel
+class MMbd extends MMcommon
 {
 
 

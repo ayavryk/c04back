@@ -1,0 +1,88 @@
+{
+    "group": [
+        {
+            "name":"Удалить", 
+            "code":"delete",
+            "confirm": "Вы уверены, что хотите удалить выделенные позиции? Подтвердите удаление"
+        },
+        {
+            "name":"Опубликовать", 
+            "code":"set",
+            "field":"public",
+            "value":1      
+        },
+        {
+            "name":"Снять с публикации", 
+            "code":"set",
+            "field":"public",
+            "value":0      
+        },  
+        {
+            "name":"Изменить источник", 
+            "code":"set",
+            "field":"source",
+            "form":[[{  
+                "flex":1,
+                "field":"source",
+                "placeholder":"Источник",
+                "label":"Источник"
+            }]]
+        },
+        {
+            "name":"Изменить теги", 
+            "code":"rel",
+            "field":"tags",
+            "form":[
+                [{  
+                  "type":"autocomplete",
+                  "field":"add",
+                  "placeholder":"Тэг",
+                  "title":"Тэг",
+                  "src":"{server}?method=tags&controller=suggest&query=",
+                  "label":"Добавить тег"
+               },{  
+                  "type":"autocomplete",
+                  "field":"del",
+                  "placeholder":"Тэг",
+                  "title":"Тэг",
+                  "src":"{server}?method=tags&controller=suggest&query=",
+                  "label":"Удалить тег"
+               },{  
+                  "type":"check",
+                  "field":"all",
+                  "label":"Очистить старые"}]
+            ]            
+        }                    
+    ],
+    "config": [
+        {
+            "field":"id",
+            "elink":"http://yandex.ru/?{id}",
+            "header":"ID",
+            "title":"Посмотреть на сайте"            
+        },
+        {
+            "field":"name",
+            "header":"Название",
+            "link":"/edit/text/{id}",
+            "title":"Редактировать",
+            "width":"99%"
+        },
+        {
+            "type":"icon",
+            "title":"Удалить",
+            "command":"delete",
+            "confirm": "Вы уверены, что хотите удалить текущую позицию? Подтвердите удаление",
+            "icons": ["fa-trash-o"]
+        },
+        {
+            "field":"public",
+            "type":"icon",
+            "title":"Опубликовать/снять",
+            "command":"invert",
+            "commandUrl":"/admin/command",
+            "icons": ["fa-eye","fa-eye-slash"]
+        }
+    ]
+}
+
