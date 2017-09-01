@@ -11,15 +11,8 @@ class AdminBase extends Controller
     function __construct(...$params) {
         parent::__construct(...$params);
 		session_start();
-
-		if (isset($_GET['whois'])) {
-				$user = false;
-				if ($this->DEBUG) {$user = '@DEBUG@';}
-				if (isset($_SESSION['user'])) {$user = $_SESSION['user'];}
-				if ($user) {$this->jsonOut(array('user'=>$user));}
-		}
-
-		if (!$this->DEBUG && !isset($_SESSION['logged'])) {
+		$this->whois();
+		if (!$this->DEBUG && !isset($_SESSION['user'])) {
 			$this->jsonOut(array('error'=>'auth'));
 		}       
     }
@@ -30,6 +23,14 @@ class AdminBase extends Controller
 		header('Content-Type: application/json');
 		echo json_encode($result,  JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);	
 		die;
+	}
+
+	public  function  whois(){
+		$user = '';
+		if (!isset($_GET['whois'])) {return;}
+		if (isset($_SESSION['user'])) {$user = $_SESSION['user'];}
+		if ($this->DEBUG) {$user = '@DEBUG@'.$user;}
+		if ($user !== '') {$this->jsonOut(array('user'=>$user));}
 	}
 
 }
